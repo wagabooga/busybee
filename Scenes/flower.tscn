@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://15wpphb301o5"]
+
+[ext_resource type="Texture2D" uid="uid://g6dssvyn1shh" path="res://Assets/KillaBee/sprite_sheet (1).png" id="1_nhitl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lldh6"]
+radius = 50.04
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c80rg"]
+atlas = ExtResource("1_nhitl")
+region = Rect2(111, 411, 111, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qur6"]
+atlas = ExtResource("1_nhitl")
+region = Rect2(333, 411, 111, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umlg7"]
+atlas = ExtResource("1_nhitl")
+region = Rect2(0, 411, 111, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nmhd"]
+atlas = ExtResource("1_nhitl")
+region = Rect2(0, 0, 111, 137)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn0ko"]
+atlas = ExtResource("1_nhitl")
+region = Rect2(222, 411, 111, 137)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w465k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c80rg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qur6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umlg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nmhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn0ko")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="flower" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("CircleShape2D_lldh6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.5, -0.5)
+sprite_frames = SubResource("SpriteFrames_w465k")
+frame_progress = 0.629603
