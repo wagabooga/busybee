@@ -1,0 +1,159 @@
+[gd_scene load_steps=10 format=3 uid="uid://c30bdforwgu5b"]
+
+[ext_resource type="Script" path="res://main_scene.gd" id="1_1i03s"]
+[ext_resource type="Texture2D" uid="uid://dd2v4kwxbsr7t" path="res://Assets/background.png" id="2_ejrug"]
+[ext_resource type="Script" path="res://beebody.gd" id="3_j0u0o"]
+[ext_resource type="Texture2D" uid="uid://dbxold5o1e6yd" path="res://moon.png" id="4_qvgo0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8wp3g"]
+load_path = "res://.godot/imported/asdasd.png-b0d77dc23fe1999cad42cf6e0fca6614.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gq1fc"]
+size = Vector2(0.999173, 0.983232)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtbr0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_us58x"]
+size = Vector2(0.932773, 0.896476)
+
+[sub_resource type="GDScript" id="GDScript_s72ai"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Game" type="Node"]
+script = ExtResource("1_1i03s")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(713, 136)
+texture = ExtResource("2_ejrug")
+
+[node name="plat2" type="Sprite2D" parent="."]
+modulate = Color(0.61861, 0.553789, 0.355133, 1)
+position = Vector2(583, 357)
+scale = Vector2(713.5, 61)
+texture = SubResource("CompressedTexture2D_8wp3g")
+
+[node name="grass" type="Sprite2D" parent="."]
+modulate = Color(0.360784, 0.862745, 0, 1)
+position = Vector2(577.5, 638)
+scale = Vector2(1209, 82)
+texture = SubResource("CompressedTexture2D_8wp3g")
+
+[node name="grassarea" type="StaticBody2D" parent="grass"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass/grassarea"]
+position = Vector2(0.000413507, 0.00838423)
+shape = SubResource("RectangleShape2D_gq1fc")
+
+[node name="beebody" type="CharacterBody2D" parent="."]
+visible = false
+position = Vector2(176, 565)
+script = ExtResource("3_j0u0o")
+
+[node name="bee" type="Sprite2D" parent="beebody"]
+texture = ExtResource("4_qvgo0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="beebody"]
+visible = false
+shape = SubResource("CircleShape2D_mtbr0")
+
+[node name="ladder" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(364, 502.5)
+scale = Vector2(29.75, 353)
+texture = SubResource("CompressedTexture2D_8wp3g")
+
+[node name="ladderarea" type="Area2D" parent="ladder"]
+position = Vector2(1.7479, -0.0269122)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder/ladderarea"]
+position = Vector2(-1.71429, -0.0226629)
+shape = SubResource("RectangleShape2D_us58x")
+
+[node name="ladder2" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(11193, 204222)
+scale = Vector2(885.063, 154646)
+texture = SubResource("CompressedTexture2D_8wp3g")
+
+[node name="ladderarea" type="Area2D" parent="ladder2"]
+position = Vector2(1.71429, -0.00762873)
+
+[node name="Flower" type="Sprite2D" parent="."]
+position = Vector2(1098, 562)
+texture = ExtResource("4_qvgo0")
+
+[node name="Area2D" type="Area2D" parent="Flower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower/Area2D"]
+
+[node name="Flower2" type="Sprite2D" parent="."]
+position = Vector2(89, 562)
+texture = ExtResource("4_qvgo0")
+
+[node name="Area2D" type="Area2D" parent="Flower2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower2/Area2D"]
+
+[node name="Flower3" type="Sprite2D" parent="."]
+position = Vector2(610, 562)
+texture = ExtResource("4_qvgo0")
+
+[node name="Area2D" type="Area2D" parent="Flower3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower3/Area2D"]
+
+[node name="Flower4" type="Sprite2D" parent="."]
+position = Vector2(802, 298)
+texture = ExtResource("4_qvgo0")
+
+[node name="Area2D" type="Area2D" parent="Flower4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower4/Area2D"]
+
+[node name="Flower6" type="Sprite2D" parent="."]
+position = Vector2(322, 298)
+texture = ExtResource("4_qvgo0")
+
+[node name="Area2D" type="Area2D" parent="Flower6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower6/Area2D"]
+
+[node name="ladder3" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(732, 502.5)
+scale = Vector2(29.75, 353)
+texture = SubResource("CompressedTexture2D_8wp3g")
+
+[node name="ladderarea" type="Area2D" parent="ladder3"]
+position = Vector2(1.7479, -0.0269122)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder3/ladderarea"]
+position = Vector2(-1.71429, -0.0226629)
+shape = SubResource("RectangleShape2D_us58x")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 326.0
+offset_bottom = 78.0
+script = SubResource("GDScript_s72ai")
+
+[connection signal="body_entered" from="ladder/ladderarea" to="beebody" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="ladder/ladderarea" to="beebody" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="ladder2/ladderarea" to="beebody" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="ladder2/ladderarea" to="beebody" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Flower/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Flower2/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Flower3/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Flower4/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Flower6/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ladder3/ladderarea" to="beebody" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="ladder3/ladderarea" to="beebody" method="_on_area_2d_body_exited"]
